@@ -2,21 +2,52 @@ package com.ki;
 
 import java.util.Scanner;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
 
-        for (int i = 1; i <= num; i++) {
-            for(int j = 1; j <= num - i; j++) {
-                System.out.print(" ");
+        int hour = sc.nextInt();
+        int minute = sc.nextInt();
+        int minute2 = sc.nextInt();
+
+        if (hour + 1 >= 24) {
+            if (minute2 < 60) {
+                if (minute + minute2 >= 60) {
+                    hour = hour - 23;
+                    minute = (minute + minute2) % 60;
+                } else {
+                    minute = (minute + minute2) % 60;
+                }
+            } else if (minute2 >= 60) {
+                if (minute + minute2 % 60 >= 60) {
+                    hour = hour - 23 + (minute + minute2) / 60;
+                    minute = (minute + minute2) % 60;
+                } else {
+                    hour = hour + (minute + minute2)  / 60;
+                    minute = (minute + minute2) % 60;
+                }
             }
-            for (int j = 1; j <= i; j++) {
-                System.out.print("*");
+        } else {
+            if (minute2 < 60) {
+                if (minute + minute2 >= 60) {
+                    hour = hour + 1;
+                    minute = (minute + minute2) % 60;
+                } else {
+                    minute = (minute + minute2) % 60;
+                }
+            } else if (minute2 >= 60) {
+                if (minute + minute2 % 60 >= 60) {
+                    hour = hour + (minute + minute2) / 60;
+                    minute = (minute + minute2) % 60;
+                } else {
+                    hour = hour + (minute + minute2) / 60;
+                    minute = (minute + minute2) % 60;
+                }
             }
-            System.out.println();
         }
+        System.out.print(hour + " " + minute);
+
+
     }
 }
 
