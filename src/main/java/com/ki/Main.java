@@ -9,45 +9,17 @@ class Main {
         int hour = sc.nextInt();
         int minute = sc.nextInt();
         int minute2 = sc.nextInt();
+        int minute3 = minute + minute2;
 
-        if (hour + 1 >= 24) {
-            if (minute2 < 60) {
-                if (minute + minute2 >= 60) {
-                    hour = hour - 23;
-                    minute = (minute + minute2) % 60;
-                } else {
-                    minute = (minute + minute2) % 60;
-                }
-            } else if (minute2 >= 60) {
-                if (minute + minute2 % 60 >= 60) {
-                    hour = hour - 23 + (minute + minute2) / 60;
-                    minute = (minute + minute2) % 60;
-                } else {
-                    hour = hour + (minute + minute2)  / 60;
-                    minute = (minute + minute2) % 60;
-                }
-            }
-        } else {
-            if (minute2 < 60) {
-                if (minute + minute2 >= 60) {
-                    hour = hour + 1;
-                    minute = (minute + minute2) % 60;
-                } else {
-                    minute = (minute + minute2) % 60;
-                }
-            } else if (minute2 >= 60) {
-                if (minute + minute2 % 60 >= 60) {
-                    hour = hour + (minute + minute2) / 60;
-                    minute = (minute + minute2) % 60;
-                } else {
-                    hour = hour + (minute + minute2) / 60;
-                    minute = (minute + minute2) % 60;
-                }
-            }
+        if (minute3 >= 60) {
+            hour = hour + minute3 / 60;
+            minute = minute3 % 60;
+        } else if (minute3 < 60) {
+            minute = minute3;
         }
+        hour = hour % 24;
+
         System.out.print(hour + " " + minute);
-
-
     }
 }
 
