@@ -6,20 +6,11 @@ class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int hour = sc.nextInt();
-        int minute = sc.nextInt();
-        int minute2 = sc.nextInt();
-        int minute3 = minute + minute2;
+        int num = sc.nextInt();
+        int sum = 0;
 
-        if (minute3 >= 60) {
-            hour = hour + minute3 / 60;
-            minute = minute3 % 60;
-        } else if (minute3 < 60) {
-            minute = minute3;
+        for (int i = 1; i <= 9; i++) {
+            System.out.println(num + " * " + i + " = " + num * i);
         }
-        hour = hour % 24;
-
-        System.out.print(hour + " " + minute);
     }
 }
-
