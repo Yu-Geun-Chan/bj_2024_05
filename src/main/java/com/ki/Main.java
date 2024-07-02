@@ -10,11 +10,10 @@ class Main {
         int sum = 0;
 
         for(int i = 1; i <= num; i++) {
-            int a = sc.nextInt();
+            int a G= sc.nextInt();
             int b = sc.nextInt();
-            System.out.printf("Case #%d: ", i);
             sum = a + b;
-            System.out.println(sum);
+            System.out.printf("Case #%d: %d + %d = %d\n" , i, a, b, sum);
         }
     }
 }
