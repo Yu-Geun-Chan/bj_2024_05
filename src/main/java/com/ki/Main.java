@@ -12,6 +12,7 @@ class Main {
         for(int i = 1; i <= num; i++) {
             int a = sc.nextInt();
             int b = sc.nextInt();
+            System.out.printf("Case #%d: ", i);
             sum = a + b;
             System.out.println(sum);
         }
