@@ -1,5 +1,6 @@
 package com.ki;
 
+
 import java.util.Scanner;
 
 class Main {
@@ -7,13 +8,15 @@ class Main {
         Scanner sc = new Scanner(System.in);
 
         int num = sc.nextInt();
-        int sum = 0;
+        int sum = num;
 
-        for(int i = 1; i <= num; i++) {
-            int a G= sc.nextInt();
-            int b = sc.nextInt();
-            sum = a + b;
-            System.out.printf("Case #%d: %d + %d = %d\n" , i, a, b, sum);
+        for (int i = 1; i <= num; i++) {
+            System.out.print(" ".repeat(sum - 1));
+            sum -= 1;
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
     }
 }
