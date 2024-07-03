@@ -5,17 +5,23 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int[] numbers =  new int[num];
 
-        int a, b, sum;
-
-        while (sc.hasNextInt()) {
-            a = sc.nextInt();
-            b = sc.nextInt();
-            sum = a + b;
-            System.out.println(sum);
+        for (int i = 0; i < num; i++) {
+            int a = sc.nextInt();
+            numbers[i] = a;
         }
-        sc.close();
+        int num2 = sc.nextInt();
+        int j = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (num2 == numbers[i]) {
+                j++;
+            }
+        }
+        System.out.println(j);
     }
 }
 
