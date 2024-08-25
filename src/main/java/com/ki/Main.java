@@ -46,7 +46,6 @@ class Main {
             // 인덱스1 x 인덱스2 등급에 해당하는 과목평점 -> 차례대로 sum에 저장
         }
         System.out.printf("%.6f",(sum / scoreSum));
-        System.out.printf("%.6f",(sum / scoreSum));
     }
 }
 
